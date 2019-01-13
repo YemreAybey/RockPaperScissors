@@ -7,21 +7,21 @@
 </head>
 <body>
 <div class="theGame">
-<h1 class="mainHeading">ROCK PAPER SCISSORS</h1>
-<h4 class="creater">Created by Yemre AYBEY<h4>
-<span class="buttons"><input type="button" onclick="choose('rock')" name="rock" id="rock" class="btn" value="ROCK"><input type="button" onclick="choose('paper')" id="paper"  class="btn" name="paper" value="PAPER"><input type="button" onclick="choose('scissors')" id="scissors" class="btn" name="scissors" value="SCISSORS"></span>
+	<h1 class="mainHeading">ROCK PAPER SCISSORS</h1>
+	<h4 class="creater">Created by Yemre AYBEY<h4>
+	<span class="buttons"><input type="button" onclick="choose('rock')" name="rock" id="rock" class="btn" value="ROCK"><input type="button" onclick="choose('paper')" id="paper"  class="btn" name="paper" value="PAPER"><input type="button" onclick="choose('scissors')" id="scissors" class="btn" name="scissors" value="SCISSORS"></span>
 </div>
 <p id="game"></p>
 <p id="longGame"></p>
 <div class="rules">
-<h2 class="ruleheading">RULES</h2>
-<ul class="rulebox">
-<li>Everytime you hit a button computer selects rock, paper or scissors at random.</li>
-<li>Every button hit is counted as round.</li>
-<li>If you win a round you get a point. If you lose, computer gets a point. If it's a draw you both don't get any points.</li>
-<li>After 5 rounds both of your scores will be calculated. The one who has the higher score will be the winner.</li>
-<li>After that all of the scores will be reset. You can start another game by just clicking any button.</li>
-</ul>
+	<h2 class="ruleheading">RULES</h2>
+	<ul class="rulebox">
+	<li>Everytime you hit a button computer selects rock, paper or scissors at random.</li>
+	<li>Every button hit is counted as round.</li>
+	<li>If you win a round you get a point. If you lose, computer gets a point. If it's a draw you both don't get any points.</li>
+	<li>After 5 rounds both of your scores will be calculated. The one who has the higher score will be the winner.</li>
+	<li>After that all of the scores will be reset. You can start another game by just clicking any button.</li>
+	</ul>
 </div>
 <script>
 let playerSelection;
@@ -30,12 +30,14 @@ let longPlayerResult=0;
 let longComputerResult=0;
 let x;
 let gameEnd=0;
-function choose(choice){
+function choose(choice)
+{
 playerSelection=choice;
 document.getElementById("longGame").innerHTML = "";
 singleGame();
 }
-function computerPlay(){
+function computerPlay()
+{
   x = Math.floor((Math.random() * 3) + 1); //Generating integer between 1 and 3.
   if (x==1){
   return "rock";}
@@ -53,60 +55,69 @@ alert("You need to enter rock, paper or scissors");
 singleGame();
 }
 
-else if (playerSelection=="rock" && computerSelection=="scissors"){
+else if (playerSelection=="rock" && computerSelection=="scissors")
+{
 console.log("You won!Rock beats scissors.");
 document.getElementById("game").innerHTML = "You won!Rock beats scissors.";
 longPlayerResult +=1;
 gameEnd+=1;
 fiveGameCheck();
 }
-else if (playerSelection=="rock" && computerSelection=="rock"){
+else if (playerSelection=="rock" && computerSelection=="rock")
+{
 console.log("Its's a draw.You both choose rock.");
 document.getElementById("game").innerHTML ="Its's a draw.You both choose rock.";
 gameEnd+=1;
 fiveGameCheck();
 }
-else if (playerSelection=="rock" && computerSelection=="paper"){
+else if (playerSelection=="rock" && computerSelection=="paper")
+{
 longComputerResult+=1;
 console.log("You lost!Paper beats rock.");
 document.getElementById("game").innerHTML ="You lost!Paper beats rock.";
 gameEnd+=1;
 fiveGameCheck();
 }
-else if (playerSelection=="paper" && computerSelection=="scissors"){
+else if (playerSelection=="paper" && computerSelection=="scissors")
+{
 longComputerResult+=1;
 console.log("You lost!Scissors beats paper.");
 document.getElementById("game").innerHTML ="You lost!Scissors beats paper.";
 gameEnd+=1;
 fiveGameCheck();
 }
-else if (playerSelection=="paper" && computerSelection=="paper"){
+else if (playerSelection=="paper" && computerSelection=="paper")
+{
 console.log("Its's a draw.You both choose paper.");
 document.getElementById("game").innerHTML ="Its's a draw.You both choose paper.";
 gameEnd+=1;
 fiveGameCheck();
 }
-else if  (playerSelection=="paper" && computerSelection=="rock"){
+else if  (playerSelection=="paper" && computerSelection=="rock")
+{
 console.log("You won!Paper beats rock.");
 document.getElementById("game").innerHTML ="You won!Paper beats rock.";
 longPlayerResult +=1;
 gameEnd+=1;
 fiveGameCheck();
 }
-else if  (playerSelection=="scissors" && computerSelection=="paper"){
+else if  (playerSelection=="scissors" && computerSelection=="paper")
+{
 console.log("You won!Scissors beats paper.");
 document.getElementById("game").innerHTML ="You won!Scissors beats paper.";
 longPlayerResult +=1;
 gameEnd+=1;
 fiveGameCheck();
 }
-else if  (playerSelection=="scissors" && computerSelection=="scissors"){
+else if  (playerSelection=="scissors" && computerSelection=="scissors")
+{
 console.log("Its's a draw.You both choose scissors.");
 document.getElementById("game").innerHTML ="Its's a draw.You both choose scissors.";
 gameEnd+=1;
 fiveGameCheck();
 }
-else if  (playerSelection=="scissors" && computerSelection=="rock"){
+else if  (playerSelection=="scissors" && computerSelection=="rock")
+{
 console.log("You lost!Rock beats scissors.");
 document.getElementById("game").innerHTML ="You lost!Rock beats scissors.";
 longComputerResult+=1;
@@ -117,19 +128,22 @@ fiveGameCheck();
 function fiveGameCheck(){
 if (gameEnd==5){
 gameEnd=0;
-if (longPlayerResult>longComputerResult){
+if (longPlayerResult>longComputerResult)
+{
 document.getElementById("longGame").innerHTML = "You won! Your score is " + longPlayerResult + " and computer's score is " + longComputerResult + ".";
 console.log("You won! Your score is " + longPlayerResult + " and computer's score is" + longComputerResult + ".");
 longPlayerResult=0;
 longComputerResult=0;
 }
-else if (longPlayerResult<longComputerResult){
+else if (longPlayerResult<longComputerResult)
+{
 document.getElementById("longGame").innerHTML = "You lost! Your score is " + longPlayerResult + " and computer's score is " + longComputerResult + ".";
 console.log("You lost! Your score is " + longPlayerResult + " and computer's score is " + longComputerResult + ".");
 longPlayerResult=0;
 longComputerResult=0;
 }
-else{
+else
+{
 document.getElementById("longGame").innerHTML = "It's a draw! Both of you get " + longPlayerResult + " points.";
 console.log("It's a draw! Both of you get " + longPlayerResult + " points.");
 longPlayerResult=0;
