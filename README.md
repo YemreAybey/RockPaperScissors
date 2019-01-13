@@ -1,0 +1,1 @@
+This is the Rock paper scissors project by Yemre AYBEY.

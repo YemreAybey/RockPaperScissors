@@ -1,0 +1,40 @@
+body{
+background-color: #dcdae6;
+}
+.theGame {
+margin: 0 auto;
+padding: 25px;
+color: #801d0b;
+border: dashed 5px black;
+text-align: center;
+}
+.rules {
+margin: 0 auto;
+padding: 30px;
+text-align: center;
+}
+.rulebox{
+list-style-type: none;
+border: dashed 5px black;
+padding: 20px;
+}
+#game {
+text-align: center;
+color: brown;
+font-size: 20px;
+}
+#longGame {
+text-align: center;
+color: brown;
+font-size: 30px;
+}
+.btn {
+margin-right:5px;
+}
+.btn:hover{
+background-color: gray;
+font-weight:bold;
+}
+.ruleheading {
+color: brown;
+}
